@@ -11,7 +11,7 @@ class ShopInfoController extends Controller
 {
     public function index()
     {
-        $shop = ShopInfo::first();
+        $shop = ShopInfo::firstOrNew(); 
         return view('admin.shop_info.form', compact('shop'));
     }
 

@@ -195,8 +195,9 @@
 <script>
     function shopForm() {
         return {
-            logoPreview: '{{ $shop->logo ? asset("storage/".$shop->logo) : null }}',
-            favPreview: '{{ $shop->fav ? asset("storage/".$shop->fav) : null }}',
+            // ប្រើសញ្ញា ?-> បើ $shop ជា null វានឹងបញ្ចេញតម្លៃទទេ '' (ការពារការ Error)
+            logoPreview: '{{ $shop?->logo ? asset("storage/" . $shop->logo) : "" }}',
+            favPreview: '{{ $shop?->fav ? asset("storage/" . $shop->fav) : "" }}',
 
             updatePreview(event, previewName) {
                 const file = event.target.files[0];
