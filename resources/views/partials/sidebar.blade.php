@@ -242,28 +242,7 @@
             </div>
         </div>
 
-<<<<<<< HEAD
-        
 
-        
-        
-        {{-- @can('theme-color')
-        <div class="group relative">
-            <a href="{{ route('admin.theme') }}" wire:navigate
-               class="sidebar-item flex items-center px-4 py-3 rounded-xl transition-all duration-200 menu-item-content
-                      {{ request()->routeIs('admin.theme') ? 'btn-primary shadow-lg' : '' }}">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" class="size-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.4 2.245 4.5 4.5 0 0 0 8.4-2.245c0-.399-.078-.78-.22-1.128Zm0 0a15.998 15.998 0 0 0 3.388-1.62m-5.043-.025a15.994 15.994 0 0 1 1.622-3.395m3.42 3.42a15.995 15.995 0 0 0 4.764-4.648l3.876-5.814a1.151 1.151 0 0 0-1.597-1.597L14.146 6.32a15.996 15.996 0 0 0-4.649 4.763m3.42 3.42a6.776 6.776 0 0 0-3.42-3.42" />
-                </svg>
-
-                <span class="sidebar-text font-medium px-2">Theme & Color</span>
-            </a>
-            <div class="tooltip hidden absolute left-[100%] top-2 ml-4 bg-gray-900 text-white text-xs px-3 py-2 rounded shadow-xl z-50 whitespace-nowrap">Theme</div>
-        </div>
-        @endcan --}}
-
-=======
->>>>>>> 2956c0e2c61a118abc73966d84ce4fd6137de49c
     </nav>
 
     
