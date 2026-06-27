@@ -7,7 +7,7 @@
         
         <div class="px-8 py-6 border-b border-border-color">
             <h2 class="text-xl font-bold text-text-color flex items-center gap-2">
-                <i class="ri-user-settings-line text-primary text-2xl"></i> 
+                <x-ri-user-settings-line class=" text-primary text-2xl" /> 
                 {{ __('messages.user_information') }}
             </h2>
         </div>
@@ -53,7 +53,7 @@
                             </div>
                             
                             <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                                <i class="ri-camera-fill text-white text-3xl"></i>
+                                <x-ri-camera-fill class=" text-white text-3xl" />
                             </div>
                         </div>
 
@@ -72,7 +72,7 @@
                         <label class="block text-sm font-medium text-text-color mb-2">{{ __('messages.username') }}</label>
                         <div class="relative">
                             <span class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-secondary">
-                                <i class="ri-user-line"></i>
+                                <x-ri-user-line class="" />
                             </span>
                             <input type="text" name="name" value="{{ old('name', $user->name) }}" 
                                    class="w-full pl-11 pr-4 py-3 rounded-xl border border-input-border bg-input-bg text-text-color focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder-secondary"
@@ -85,7 +85,7 @@
                         <label class="block text-sm font-medium text-text-color mb-2">{{ __('messages.email') }}</label>
                         <div class="relative">
                             <span class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-secondary">
-                                <i class="ri-mail-line"></i>
+                                <x-ri-mail-line class="" />
                             </span>
                             <input type="email" name="email" value="{{ old('email', $user->email) }}" 
                                    class="w-full pl-11 pr-4 py-3 rounded-xl border border-input-border bg-input-bg text-text-color focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder-secondary"
@@ -100,8 +100,8 @@
                                 class="bg-primary hover:opacity-90 text-white font-medium py-2.5 px-8 rounded-lg transition-all flex items-center gap-2 shadow-lg shadow-blue-500/30 disabled:opacity-70 disabled:cursor-not-allowed"
                                 :disabled="isLoading">
                             
-                            <i class="ri-save-line text-lg" x-show="!isLoading"></i>
-                            <i class="ri-loader-4-line text-lg animate-spin" x-show="isLoading" style="display: none;"></i>
+                            <x-ri-save-line class=" text-lg" x-show="!isLoading" />
+                            <x-ri-loader-4-line class=" text-lg animate-spin" x-show="isLoading" style="display: none;" />
                             
                             <span x-text="isLoading ? '{{ __('messages.saving') }}' : '{{ __('messages.save_changes') }}'"></span>
                         </button>

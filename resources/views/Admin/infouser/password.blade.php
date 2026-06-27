@@ -7,7 +7,7 @@
         
         <div class="px-8 py-6 border-b border-border-color">
             <h2 class="text-xl font-bold text-text-color flex items-center gap-2">
-                <i class="ri-lock-password-line text-primary text-2xl"></i> 
+                <x-ri-lock-password-line class=" text-primary text-2xl" /> 
                 {{ __('messages.change_password') }}
             </h2>
         </div>
@@ -17,7 +17,7 @@
             <div class="lg:col-span-1 border-r border-input-border pr-8 hidden lg:block">
                 <div class="flex flex-col items-center text-center p-6 bg-page-bg/50 rounded-2xl border border-input-border border-dashed">
                     <div class="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                        <i class="ri-shield-keyhole-line text-3xl text-primary"></i>
+                        <x-ri-shield-keyhole-line class=" text-3xl text-primary" />
                     </div>
                     <h3 class="text-lg font-bold text-text-color mb-2">{{ __('messages.secure_account') }}</h3>
                     <p class="text-sm text-secondary mb-6 leading-relaxed">
@@ -28,16 +28,16 @@
                         <p class="text-xs font-bold text-text-color uppercase tracking-wider">{{ __('messages.password_requirements') }}:</p>
                         <ul class="text-sm text-secondary space-y-2">
                             <li class="flex items-center gap-2">
-                                <i class="ri-checkbox-circle-fill text-green-500"></i> {{ __('messages.req_min_chars') }}
+                                <x-ri-checkbox-circle-fill class=" text-green-500" /> {{ __('messages.req_min_chars') }}
                             </li>
                             <li class="flex items-center gap-2">
-                                <i class="ri-checkbox-circle-fill text-green-500"></i> {{ __('messages.req_special_char') }}
+                                <x-ri-checkbox-circle-fill class=" text-green-500" /> {{ __('messages.req_special_char') }}
                             </li>
                             <li class="flex items-center gap-2">
-                                <i class="ri-checkbox-circle-fill text-green-500"></i> {{ __('messages.req_number') }}
+                                <x-ri-checkbox-circle-fill class=" text-green-500" /> {{ __('messages.req_number') }}
                             </li>
                             <li class="flex items-center gap-2">
-                                <i class="ri-checkbox-circle-fill text-green-500"></i> {{ __('messages.req_not_same') }}
+                                <x-ri-checkbox-circle-fill class=" text-green-500" /> {{ __('messages.req_not_same') }}
                             </li>
                         </ul>
                     </div>
@@ -59,7 +59,7 @@
                             <label class="block text-sm font-medium text-text-color mb-2">{{ __('messages.current_password') }}</label>
                             <div class="relative">
                                 <span class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-secondary">
-                                    <i class="ri-key-2-line"></i>
+                                    <x-ri-key-2-line class="" />
                                 </span>
                                 
                                 <input :type="show ? 'text' : 'password'" name="current_password" 
@@ -77,7 +77,7 @@
                             <label class="block text-sm font-medium text-text-color mb-2">{{ __('messages.new_password') }}</label>
                             <div class="relative">
                                 <span class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-secondary">
-                                    <i class="ri-lock-line"></i>
+                                    <x-ri-lock-line class="" />
                                 </span>
                                 
                                 <input :type="show ? 'text' : 'password'" name="password" 
@@ -95,7 +95,7 @@
                             <label class="block text-sm font-medium text-text-color mb-2">{{ __('messages.confirm_new_password') }}</label>
                             <div class="relative">
                                 <span class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-secondary">
-                                    <i class="ri-lock-check-line"></i>
+                                    <x-ri-lock-check-line class="" />
                                 </span>
                                 
                                 <input :type="show ? 'text' : 'password'" name="password_confirmation" 
@@ -112,8 +112,8 @@
                             <button type="submit" 
                                     class="bg-primary hover:opacity-90 text-white font-medium py-2.5 px-8 rounded-lg transition-all flex items-center gap-2 shadow-lg disabled:opacity-70 disabled:cursor-not-allowed"
                                     :disabled="isLoading">
-                                <i class="ri-key-2-line text-lg" x-show="!isLoading"></i>
-                                <i class="ri-loader-4-line text-lg animate-spin" x-show="isLoading" style="display: none;"></i>
+                                <x-ri-key-2-line class=" text-lg" x-show="!isLoading" />
+                                <x-ri-loader-4-line class=" text-lg animate-spin" x-show="isLoading" style="display: none;" />
                                 <span x-text="isLoading ? '{{ __('messages.updating') }}' : '{{ __('messages.update_password') }}'"></span>
                             </button>
                         </div>

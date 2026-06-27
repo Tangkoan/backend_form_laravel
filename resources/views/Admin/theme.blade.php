@@ -38,14 +38,14 @@
                     :class="activeTab === 'light' ? 'bg-white text-blue-600 shadow-sm' :
                         'text-gray-500 hover:text-gray-700 dark:hover:text-gray-300'"
                     class="px-6 py-2.5 rounded-lg text-sm font-bold transition-all flex items-center gap-2">
-                    <i class="ri-sun-line text-lg"></i> {{ __('messages.mode_light') }}
+                    <x-ri-sun-line class=" text-lg" /> {{ __('messages.mode_light') }}
                 </button>
 
                 <button @click="$store.theme.setMode('dark')"
                     :class="activeTab === 'dark' ? 'bg-gray-700 text-blue-400 shadow-sm' :
                         'text-gray-500 hover:text-gray-300'"
                     class="px-6 py-2.5 rounded-lg text-sm font-bold transition-all flex items-center gap-2">
-                    <i class="ri-moon-line text-lg"></i> {{ __('messages.mode_dark') }}
+                    <x-ri-moon-line class=" text-lg" /> {{ __('messages.mode_dark') }}
                 </button>
             </div>
         </div>
@@ -56,7 +56,7 @@
                 <h3
                     class="font-bold text-lg mb-6 flex items-center gap-3 text-gray-800 dark:text-white pb-4 border-b border-border-color">
                     <span class="p-2 rounded-lg bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
-                        <i class="ri-flag-fill"></i>
+                        <x-ri-flag-fill class="" />
                     </span>
                     {{ __('messages.brand_identity') }}
                 </h3>
@@ -74,7 +74,7 @@
                 <h3
                     class="font-bold text-lg mb-6 flex items-center gap-3 text-gray-800 dark:text-white pb-4 border-b border-border-color">
                     <span class="p-2 rounded-lg bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400">
-                        <i class="ri-layout-masonry-fill"></i>
+                        <x-ri-layout-masonry-fill class="" />
                     </span>
                     {{ __('messages.layout_structure') }}
                 </h3>
@@ -101,7 +101,7 @@
                 <h3
                     class="font-bold text-lg mb-6 flex items-center gap-3 text-gray-800 dark:text-white pb-4 border-b border-border-color">
                     <span class="p-2 rounded-lg bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400">
-                        <i class="ri-file-list-fill"></i>
+                        <x-ri-file-list-fill class="" />
                     </span>
                     {{ __('messages.content_forms') }}
                 </h3>
@@ -136,7 +136,7 @@
             {{-- ផ្នែកខាងឆ្វេង --}}
             <div class="flex items-center gap-3">
                 <div class="hidden sm:flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-                    <i class="ri-information-line text-lg text-blue-500"></i>
+                    <x-ri-information-line class=" text-lg text-blue-500" />
                     <span x-show="!$store.theme.isSaving">{{ __('messages.status_ready') }}</span>
                     <span x-show="$store.theme.isSaving" class="text-blue-500 font-medium">{{ __('messages.status_processing') }}</span>
                 </div>

@@ -23,13 +23,13 @@
                 <div class="flex gap-1">
                     @can('user-edit')
                     <button @click="startSequentialEdit()" class="text-sm font-bold text-blue-600 hover:bg-blue-50 px-3 py-1.5 rounded-md transition" title="{{ __('messages.edit_sequence') }}">
-                        <i class="ri-edit-circle-line"></i>
+                        <x-ri-edit-circle-line class="" />
                     </button>
                     @endcan
 
                     @can('user-delete')
                     <button @click="confirmBulkDelete()" class="text-sm font-bold text-red-600 hover:bg-red-50 px-3 py-1.5 rounded-md transition" title="{{ __('messages.delete_selected') }}">
-                        <i class="ri-delete-bin-line"></i>
+                        <x-ri-delete-bin-line class="" />
                     </button>
                     @endcan
                 </div>
@@ -38,7 +38,7 @@
             <div class="relative w-full sm:w-auto" x-data="{ openCol: false }">
                 <button @click="openCol = !openCol" @click.outside="openCol = false" 
                         class="w-full sm:w-auto flex justify-center items-center gap-2 px-3 py-2.5 bg-card-bg border border-input-border rounded-xl text-text-color hover:bg-input-bg transition text-sm font-medium shadow-sm">
-                    <i class="ri-layout-column-line"></i> <span class="sm:hidden lg:inline">{{ __('messages.columns') }}</span>
+                    <x-ri-layout-column-line class="" /> <span class="sm:hidden lg:inline">{{ __('messages.columns') }}</span>
                 </button>
                 <div x-show="openCol" class="absolute right-0 mt-2 w-48 bg-card-bg border border-border-color rounded-xl shadow-xl z-50 p-2" style="display: none;" x-transition>
                     <div class="space-y-1">
@@ -60,7 +60,7 @@
 
             <div class="relative w-full sm:w-64">
                 <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-secondary">
-                    <i class="ri-search-line"></i>
+                    <x-ri-search-line class="" />
                 </span>
                 <input type="text" x-model="search" @keyup.debounce.500ms="fetchUsers()"
                        class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-input-border bg-card-bg text-text-color focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder-secondary text-sm shadow-sm"
@@ -119,13 +119,13 @@
                                             class="h-8 w-8 rounded-lg flex items-center justify-center transition-colors
                                             @can('user-edit') bg-blue-50 dark:bg-blue-900/20 text-blue-600 hover:bg-blue-100 @else bg-gray-100 cursor-not-allowed @endcan"
                                             @cannot('user-edit') disabled @endcannot>
-                                            <i class="ri-pencil-line"></i>
+                                            <x-ri-pencil-line class="" />
                                     </button>
                                     <button @can('user-delete') @click="confirmDelete(user.id)" @endcan
                                             class="h-8 w-8 rounded-lg flex items-center justify-center transition-colors
                                             @can('user-delete') bg-red-50 dark:bg-red-900/20 text-red-600 hover:bg-red-100 @else bg-gray-100 cursor-not-allowed @endcan"
                                             @cannot('user-delete') disabled @endcannot>
-                                            <i class="ri-delete-bin-line"></i>
+                                            <x-ri-delete-bin-line class="" />
                                     </button>
                                 </div>
                             </td>
@@ -133,7 +133,7 @@
                     </template>
                     <tr x-show="users.length === 0">
                         <td colspan="6" class="px-6 py-12 text-center text-secondary">
-                            <i class="ri-ghost-line text-4xl mb-2 inline-block"></i>
+                            <x-ri-ghost-line class=" text-4xl mb-2 inline-block" />
                             <p>{{ __('messages.no_users_found_matching_your_search') }}</p>
                         </td>
                     </tr>
@@ -159,7 +159,7 @@
                         </p>
                     </template>
                 </div>
-                <button @click="closeModal(true)" class="text-secondary hover:text-text-color"><i class="ri-close-line text-xl"></i></button>
+                <button @click="closeModal(true)" class="text-secondary hover:text-text-color"><x-ri-close-line class=" text-xl" /></button>
             </div>
             
             <form @submit.prevent="submitForm" class="p-6 space-y-4">
@@ -193,7 +193,7 @@
 
                 <div class="pt-4 flex justify-between items-center border-t border-border-color mt-2">
                     <button type="button" x-show="isSequenceMode" @click="nextInSequence()" class="text-secondary hover:text-text-color text-sm font-bold px-2">
-                        {{ __('messages.skip_this_user') }} <i class="ri-arrow-right-line align-middle"></i>
+                        {{ __('messages.skip_this_user') }} <x-ri-arrow-right-line class=" align-middle" />
                     </button>
                     <div x-show="!isSequenceMode"></div> 
                     <div class="flex gap-3">

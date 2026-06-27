@@ -97,7 +97,7 @@
                 </div>
 
                 <button class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors">
-                    <i class="ri-close-line text-lg"></i>
+                    <x-ri-close-line class=" text-lg" />
                 </button>
             </div>
 

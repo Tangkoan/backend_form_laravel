@@ -22,13 +22,13 @@
                 <div class="flex gap-1">
                     @can('role-edit')
                     <button @click="startSequentialEdit()" class="text-sm font-bold text-blue-600 hover:bg-blue-50 px-3 py-1.5 rounded-md transition" title="{{ __('messages.edit') }}">
-                        <i class="ri-edit-circle-line mr-1"></i> {{ __('messages.edit') }}
+                        <x-ri-edit-circle-line class=" mr-1" /> {{ __('messages.edit') }}
                     </button>
                     @endcan
 
                     @can('role-delete')
                     <button @click="confirmBulkDelete()" class="text-sm font-bold text-red-600 hover:bg-red-50 px-3 py-1.5 rounded-md transition" title="{{ __('messages.delete') }}">
-                        <i class="ri-delete-bin-line mr-1"></i> {{ __('messages.delete') }}
+                        <x-ri-delete-bin-line class=" mr-1" /> {{ __('messages.delete') }}
                     </button>
                     @endcan
                 </div>
@@ -37,7 +37,7 @@
             <div class="relative" x-data="{ openCol: false }">
                 <button @click="openCol = !openCol" @click.outside="openCol = false" 
                         class="flex justify-center items-center gap-2 px-3 py-2.5 bg-card-bg border border-input-border rounded-xl text-text-color hover:bg-input-bg transition text-sm font-medium shadow-sm">
-                    <i class="ri-layout-column-line"></i> {{ __('messages.columns') }}
+                    <x-ri-layout-column-line class="" /> {{ __('messages.columns') }}
                 </button>
                 <div x-show="openCol" class="absolute right-0 mt-2 w-48 bg-card-bg border border-border-color rounded-xl shadow-xl z-50 p-2" style="display: none;" x-transition>
                     <div class="space-y-1">
@@ -55,7 +55,7 @@
 
             <div class="relative w-full sm:w-64">
                 <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-secondary">
-                    <i class="ri-search-line"></i>
+                    <x-ri-search-line class="" />
                 </span>
                 <input type="text" x-model="search" @keyup.debounce.500ms="fetchRoles()"
                        class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-input-border bg-card-bg text-text-color focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder-secondary text-sm shadow-sm"
@@ -131,7 +131,7 @@
                                         class="h-8 w-8 rounded-lg flex items-center justify-center transition-colors
                                                @can('role-assign') bg-yellow-50 dark:bg-yellow-900/20 text-yellow-600 hover:bg-yellow-100 @else bg-gray-100 text-gray-400 cursor-not-allowed @endcan"
                                         @cannot('role-assign') disabled @endcannot>
-                                        <i class="ri-shield-keyhole-line"></i>
+                                        <x-ri-shield-keyhole-line class="" />
                                     </button>
 
                                     <button 
@@ -139,7 +139,7 @@
                                         class="h-8 w-8 rounded-lg flex items-center justify-center transition-colors
                                                @can('role-edit') bg-blue-50 dark:bg-blue-900/20 text-blue-600 hover:bg-blue-100 @else bg-gray-100 text-gray-400 cursor-not-allowed @endcan"
                                         @cannot('role-edit') disabled @endcannot>
-                                        <i class="ri-pencil-line"></i>
+                                        <x-ri-pencil-line class="" />
                                     </button>
 
                                     <button 
@@ -147,7 +147,7 @@
                                         class="h-8 w-8 rounded-lg flex items-center justify-center transition-colors
                                                @can('role-delete') bg-red-50 dark:bg-red-900/20 text-red-600 hover:bg-red-100 @else bg-gray-100 text-gray-400 cursor-not-allowed @endcan"
                                         @cannot('role-delete') disabled @endcannot>
-                                        <i class="ri-delete-bin-line"></i>
+                                        <x-ri-delete-bin-line class="" />
                                     </button>
                                 </div>
                             </td>
@@ -155,7 +155,7 @@
                     </template>
                     <tr x-show="roles.length === 0">
                         <td colspan="6" class="px-6 py-12 text-center text-secondary">
-                            <i class="ri-shield-line text-4xl mb-2 inline-block"></i>
+                            <x-ri-shield-line class=" text-4xl mb-2 inline-block" />
                             <p>{{ __('messages.no_roles_found') }}</p>
                         </td>
                     </tr>
@@ -179,7 +179,7 @@
                         </p>
                     </template>
                 </div>
-                <button @click="closeModal(true)" class="text-secondary hover:text-text-color"><i class="ri-close-line text-xl"></i></button>
+                <button @click="closeModal(true)" class="text-secondary hover:text-text-color"><x-ri-close-line class=" text-xl" /></button>
             </div>
 
 
@@ -203,7 +203,7 @@
                 </div>
 
                 <div class="pt-4 flex justify-between items-center border-t border-border-color mt-2">
-                    <button type="button" x-show="isSequenceMode" @click="nextInSequence()" class="text-secondary hover:text-text-color text-sm font-bold px-2">{{ __('messages.skip') }} <i class="ri-arrow-right-line align-middle"></i></button>
+                    <button type="button" x-show="isSequenceMode" @click="nextInSequence()" class="text-secondary hover:text-text-color text-sm font-bold px-2">{{ __('messages.skip') }} <x-ri-arrow-right-line class=" align-middle" /></button>
                     <div x-show="!isSequenceMode"></div> 
                     <div class="flex gap-3">
                         <button type="button" @click="closeModal(true)" class="px-4 py-2 rounded-lg border border-input-border text-text-color hover:bg-page-bg transition">{{ __('messages.cancel') }}</button>
@@ -225,14 +225,14 @@
             <div class="px-6 py-4 border-b border-border-color flex justify-between items-center bg-page-bg/30 flex-shrink-0">
                 <div class="flex items-center gap-3">
                     <div class="h-10 w-10 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center text-yellow-600">
-                        <i class="ri-shield-keyhole-line text-xl"></i>
+                        <x-ri-shield-keyhole-line class=" text-xl" />
                     </div>
                     <div>
                         <h3 class="text-lg font-bold text-text-color">{{ __('messages.assign_permissions') }}</h3>
                         <p class="text-xs text-secondary">Role: <span class="font-bold text-primary" x-text="permissionForm.roleName"></span></p>
                     </div>
                 </div>
-                <button @click="isPermissionModalOpen = false" class="text-secondary hover:text-text-color"><i class="ri-close-line text-xl"></i></button>
+                <button @click="isPermissionModalOpen = false" class="text-secondary hover:text-text-color"><x-ri-close-line class=" text-xl" /></button>
             </div>
 
             <div class="overflow-y-auto p-6 bg-card-bg">
@@ -250,7 +250,7 @@
                             <div class="relative flex items-center">
                                 <input type="checkbox" :value="perm.name" x-model="permissionForm.permissions"
                                        class="peer w-5 h-5 cursor-pointer appearance-none rounded border border-input-border checked:bg-primary checked:border-primary transition-all">
-                                <i class="ri-check-line absolute text-white text-sm opacity-0 peer-checked:opacity-100 pointer-events-none left-[2px]"></i>
+                                <x-ri-check-line class=" absolute text-white text-sm opacity-0 peer-checked:opacity-100 pointer-events-none left-[2px]" />
                             </div>
                             <span class="text-sm text-text-color capitalize font-medium" x-text="perm.name.replace(/-/g, ' ')"></span>
                         </label>

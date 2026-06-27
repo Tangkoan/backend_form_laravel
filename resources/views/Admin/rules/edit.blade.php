@@ -6,7 +6,7 @@
     <div class="flex justify-between items-center mb-6">
         <div>
             <h1 class="text-2xl font-bold text-text-color flex items-center gap-2">
-                <i class="ri-settings-4-line text-primary"></i> {{ __('messages.configure_rules') }}: <span class="text-primary">{{ $role->name }}</span>
+                <x-ri-settings-4-line class=" text-primary" /> {{ __('messages.configure_rules') }}: <span class="text-primary">{{ $role->name }}</span>
             </h1>
             {{-- ប្រើ {!! !!} ដើម្បីអនុញ្ញាតឱ្យប្រើ Tag <strong> នៅក្នុងអក្សរបាន --}}
             <p class="text-sm text-secondary mt-1">
@@ -14,7 +14,7 @@
             </p>
         </div>
         <a href="{{ route('admin.rules.index') }}" class="text-secondary hover:text-text-color flex items-center gap-1">
-            <i class="ri-arrow-left-line"></i> {{ __('messages.btn_back') }}
+            <x-ri-arrow-left-line class="" /> {{ __('messages.btn_back') }}
         </a>
     </div>
 
@@ -37,7 +37,7 @@
                                 <input type="checkbox" name="permissions[]" value="{{ $perm->id }}"
                                     {{ $role->assignablePermissions->contains($perm->id) ? 'checked' : '' }}
                                     class="peer w-5 h-5 cursor-pointer appearance-none rounded border border-input-border checked:bg-primary checked:border-primary transition-all bg-card-bg">
-                                <i class="ri-check-line absolute text-white text-sm opacity-0 peer-checked:opacity-100 pointer-events-none left-[2px]"></i>
+                                <x-ri-check-line class=" absolute text-white text-sm opacity-0 peer-checked:opacity-100 pointer-events-none left-[2px]" />
                             </div>
                             <span class="text-sm text-text-color">{{ $perm->name }}</span>
                         </label>

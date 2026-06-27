@@ -114,7 +114,7 @@ class ActivityLogController extends Controller
                     $html .= '<div class="mb-1">';
                     $html .= '<span class="text-secondary">' . $key . ':</span> ';
                     $html .= '<span class="text-red-500 line-through mr-1">' . $log->properties['old'][$key] . '</span>';
-                    $html .= '<i class="ri-arrow-right-line text-[10px] text-secondary mr-1"></i>';
+                    $html .= '<x-ri-arrow-right-line class=" text-[10px] text-secondary mr-1" />';
                     $html .= '<span class="text-green-600 font-bold">' . $newValue . '</span>';
                     $html .= '</div>';
                 }

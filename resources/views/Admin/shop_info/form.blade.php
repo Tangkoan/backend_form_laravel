@@ -4,7 +4,7 @@
 
 @if ($errors->any())
     <div class="mb-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-xl relative shadow-sm" role="alert">
-        <strong class="font-bold"><i class="ri-error-warning-line mr-1"></i> Error!</strong>
+        <strong class="font-bold"><x-ri-error-warning-line class=" mr-1" /> Error!</strong>
         <ul class="mt-1 list-disc list-inside text-sm">
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
@@ -27,7 +27,7 @@
                 <div>
                     <h1 class="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-3">
                         <span class="p-2 rounded-lg bg-primary/10 text-primary">
-                            <i class="ri-store-3-line text-2xl"></i>
+                            <x-ri-store-3-line class="w-6 h-6 text-primary" />
                         </span>
                         {{ __('messages.shop_configuration') }}
                     </h1>
@@ -36,7 +36,7 @@
                 {{-- Submit Button --}}
                 <button type="submit" 
                     class="inline-flex items-center justify-center px-6 py-2.5 border border-transparent text-sm font-semibold rounded-xl text-white bg-primary hover:opacity-90 shadow-lg shadow-primary/30 transition-all hover:-translate-y-0.5">
-                    <i class="ri-save-line mr-2 text-lg"></i>
+                    <x-ri-save-line class=" mr-2 text-lg" />
                     <span>{{ __('messages.save_changes') }}</span>
                 </button>
             </div>
@@ -156,7 +156,7 @@
                                 </template>
                                 <template x-if="!logoPreview">
                                     <div class="flex flex-col items-center text-gray-400 group-hover:text-primary transition-colors">
-                                        <i class="ri-image-add-line text-4xl mb-2"></i>
+                                        <x-ri-image-add-line class=" text-4xl mb-2" />
                                         <span class="text-xs font-semibold">{{ __('messages.click_to_upload') }}</span>
                                     </div>
                                 </template>
@@ -173,7 +173,7 @@
                                         <img :src="favPreview" class="w-8 h-8 object-contain">
                                     </template>
                                     <template x-if="!favPreview">
-                                        <i class="ri-upload-cloud-2-line text-gray-400 text-xl group-hover:text-primary transition-colors"></i>
+                                        <x-ri-upload-cloud-2-line class=" text-gray-400 text-xl group-hover:text-primary transition-colors" />
                                     </template>
                                     
                                     <input type="file" name="fav" @change="updatePreview($event, 'favPreview')" class="absolute inset-0 opacity-0 cursor-pointer">

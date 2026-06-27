@@ -7,7 +7,7 @@
         <div class="bg-white p-8 rounded-lg shadow-lg border-l-4 border-green-500">
             <div class="flex items-center mb-4">
                 <div class="bg-green-100 p-3 rounded-full text-green-600 mr-4">
-                    <i class="ri-checkbox-circle-line text-3xl"></i>
+                    <x-ri-checkbox-circle-line class=" text-3xl" />
                 </div>
                 <h2 class="text-2xl text-gray-800 font-bold">Login ជោគជ័យ!</h2>
             </div>
@@ -17,7 +17,7 @@
                     សូមស្វាគមន៍, <span class="font-bold text-gray-900">{{ Auth::user()->name }}</span>
                 </p>
                 <p class="text-gray-500 mt-2 flex items-center">
-                    <i class="ri-mail-line mr-2"></i> {{ Auth::user()->email }}
+                    <x-ri-mail-line class=" mr-2" /> {{ Auth::user()->email }}
                 </p>
             </div>
         </div>

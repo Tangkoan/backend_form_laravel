@@ -244,7 +244,7 @@
         class="bg-blue-600 text-white p-3 rounded-full shadow-lg hover:scale-110 transition-transform flex items-center justify-center"
         :style="'background-color: rgb(' + $store.theme.settings[$store.theme.darkMode ? 'dark' : 'light'].primary + ')'"
         >
-            <i class="ri-telegram-line text-xl"></i>
+            <x-ri-telegram-line class=" text-xl" />
         </a>
     </div> --}}
 
